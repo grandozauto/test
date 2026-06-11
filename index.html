@@ -341,53 +341,37 @@
     </section>
 
     <!-- ===== CTA / Contact ===== -->
-    <section class="section contact" id="contact">
-      <div class="section__inner contact__inner">
-        <div class="contact__card" data-reveal>
-          <h2 class="contact__title">Ready when <span class="accent">you are.</span></h2>
-          <p class="contact__lede">Call, stop by, or send us a note — we'll get you back on the road.</p>
+    
+August Lenz
+6:27 PM (0 minutes ago)
+to me
 
-          <div class="contact__grid">
-            <a class="contact__tile" href="tel:+12622048144">
-              <span class="contact__tile-label">Call us</span>
-              <span class="contact__tile-value">(262) 204-8144</span>
-            </a>
-            <a class="contact__tile" href="mailto:grandozauto@gmail.com">
-              <span class="contact__tile-label">Email</span>
-              <span class="contact__tile-value">grandozauto@gmail.com</span>
-            </a>
-            <div class="contact__tile">
-              <span class="contact__tile-label">Hours</span>
-              <span class="contact__tile-value">Mon–Fri · 7:30 AM – 5:30 PM</span>
-            </div>
-            <div class="contact__tile">
-              <span class="contact__tile-label">Location</span>
-              <span class="contact__tile-value">Ozaukee County, Wisconsin</span>
-            </div>
-          </div>
+<form class="contact__form" action="https://formsubmit.co/grandozauto@gmail.com" method="POST">
 
-          <form class="contact__form" id="contactForm" novalidate>
-            <div class="field-row">
-              <label class="field">
-                <span>Name</span>
-                <input type="text" name="name" autocomplete="name" required placeholder="Your name">
-              </label>
-              <label class="field">
-                <span>Phone</span>
-                <input type="tel" name="phone" autocomplete="tel" required placeholder="(262) 204-8144">
-              </label>
-            </div>
-            <label class="field">
-              <span>What does your vehicle need?</span>
-              <textarea name="message" rows="3" required placeholder="Year, make, model & what's going on…"></textarea>
-            </label>
-            <button class="btn btn--solid btn--lg contact__submit" type="submit">Request an Appointment</button>
-            <p class="contact__form-note" id="formNote" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
+<!-- FormSubmit Configuration -->
+<input type="hidden" name="_subject" value="New Service Appointment Request — Grand Ozaukee Automotive">
+<input type="hidden" name="_template" value="table">
+
+<div class="field-row">
+<div class="field">
+<span>Name</span>
+<input type="text" name="Name" placeholder="Your Name" required autocomplete="name">
+</div>
+<div class="field">
+<span>Phone</span>
+<input type="tel" name="Phone" placeholder="Your Phone Number" required autocomplete="tel">
+</div>
+</div>
+
+<div class="field">
+<span>What does your vehicle need?</span>
+<textarea name="Vehicle Needs" rows="5" placeholder="Describe the issues or required service..." required></textarea>
+</div>
+
+<button type="submit" class="btn btn--solid btn--lg contact__submit">Request an Appointment</button>
+
+<div class="contact__form-note"></div>
+</form>
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
