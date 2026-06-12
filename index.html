@@ -342,35 +342,19 @@
 
     <!-- ===== CTA / Contact ===== -->
     
-August Lenz
-6:27 PM (0 minutes ago)
-to me
 
-<form class="contact__form" action="https://formsubmit.co/grandozauto@gmail.com" method="POST">
+<form action="https://formsubmit.co/grandozauto@gmail.com" method="POST">
+  <!-- Disable captcha (use honeypot instead) -->
+  <input type="hidden" name="_captcha" value="false">
+  <!-- Disable FormSubmit's default success page — redirect back to your own site -->
+  <input type="hidden" name="_next" value="https://grandozauto.github.io/test/">
+  <!-- Honeypot spam trap -->
+  <input type="text" name="_honey" style="display:none">
 
-<!-- FormSubmit Configuration -->
-<input type="hidden" name="_subject" value="New Service Appointment Request — Grand Ozaukee Automotive">
-<input type="hidden" name="_template" value="table">
-
-<div class="field-row">
-<div class="field">
-<span>Name</span>
-<input type="text" name="Name" placeholder="Your Name" required autocomplete="name">
-</div>
-<div class="field">
-<span>Phone</span>
-<input type="tel" name="Phone" placeholder="Your Phone Number" required autocomplete="tel">
-</div>
-</div>
-
-<div class="field">
-<span>What does your vehicle need?</span>
-<textarea name="Vehicle Needs" rows="5" placeholder="Describe the issues or required service..." required></textarea>
-</div>
-
-<button type="submit" class="btn btn--solid btn--lg contact__submit">Request an Appointment</button>
-
-<div class="contact__form-note"></div>
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="tel" name="phone" placeholder="Phone">
+  <textarea name="message" placeholder="What does your vehicle need?"></textarea>
+  <button type="submit">Request an Appointment</button>
 </form>
 
   <!-- ===== Footer ===== -->
@@ -455,6 +439,13 @@ revealObserver.unobserve(entry.target);
 revealElements.forEach(el => revealObserver.observe(el));
 }
 </script>
+
+    // Re-fire animations if page is restored from bfcache (e.g. after form redirect)
+window.addEventListener('pageshow', function(event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+});
 
 </body>
 </html>
