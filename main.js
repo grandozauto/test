@@ -43,17 +43,15 @@
     if (e.key === "Escape") setMenu(false);
   });
 
-  // Contact form (front-end only)
+  // Contact form — validate only; let FormSubmit handle the actual submission
   var form = document.getElementById("contactForm");
   var note = document.getElementById("formNote");
   form.addEventListener("submit", function (e) {
-    e.preventDefault();
     if (!form.checkValidity()) {
+      e.preventDefault();
       note.textContent = "Please fill in your name, phone, and what your vehicle needs.";
-      return;
     }
-    form.reset();
-    note.textContent = "Thanks! We received your request and will call you shortly.";
+    // If valid, do nothing — the form submits naturally to FormSubmit
   });
 
   /* ---------- Build the gauge geometry (SVG) ---------- */
